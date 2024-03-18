@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .main {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .card {
+        padding: 1rem;
+        border-radius: .5rem;
+        background-color: gray;
+        box-shadow: 1px 0px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .card>img {
+        width: 100%;
+    }
+
+    .thambnail {
+        width: 20%;
+    }
+</style>
+
+<body>
+    <section class="main" id="main">
+        <input type="text" id="input">
+
+        <script>
+            fetch('https://dummyjson.com/products')
+                .then((response) => response.json())
+                .then((data) => {
+                    let product = data.products
+                    console.log(product)
+                    let result = product.map((item) => {
+                        return `<div class="card">
+<img src=${item.images[0]} alt="">
+<div class="info">
+<h2 class="title">${item.title}</h2>
+<p>Brand : ${item.brand}</p>
+<p>Category : ${item.category}</p>
+<p>Price : ${item.price}</p>
+<p>Description : ${item.description}</p>
+<p>DiscountPercentage : ${item.discountPercentage}%</p>
+<p>Id : ${item.id}</p>
+<p>Rating : ${item.rating}</p>
+<p>Stock : ${item.stock}</p>
+<img class="thambnail" src=${item.thumbnail} alt="">
+</div>
+
+</div>
+`
+                    })
+                    main.innerHTML = result.join('')
+                }).catch((err) => {
+                    console.log(err)
+                })
+
+
+
+
+        </script>
+</body>
+
+</html>
