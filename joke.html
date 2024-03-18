@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="btn">get joke</button>
+    <p class="id"></p>
+    <p class="type"></p>
+    <p class="joke">
+
+    </p>
+
+    <p class="punch">
+    </p>
+
+
+    <!-- to add functionality -->
+    <script>
+        async function fetchdatabase() {
+            let url2 = 'https://api.chucknorris.io/jokes/random'
+            let a = await fetch(url2)
+            let b = await a.json()
+            console.log(b);
+            let value = b.value
+            document.querySelector('.joke').innerText = value
+        }
+        document.querySelector('.btn').addEventListener('click', fetchdatabase)
+        fetchdatabase()
+
+
+
+
+
+        
+//   it is also working API
+
+        // async function fetchdatabase2() {
+        //     let url = 'https://official-joke-api.appspot.com/random_joke';
+        //     let u = await fetch(url)
+        //     let r = await u.json()
+        //     console.log(r);
+        //     let id = r.id
+        //     console.log(id);
+        //     let type = r.type
+        //     console.log(type);
+        //     let joke = r.setup
+        //     console.log(joke);
+        //     let punch = r.punchline
+        //     console.log(punch);
+        //     document.querySelector('.id').innerText = id
+        //     document.querySelector('.type').innerText = type
+        //     document.querySelector('.joke').innerText = joke
+        //     document.querySelector('.punch').innerText = punch
+        // }
+
+
+        // // fetchdatabase2() //to get full object
+        // document.querySelector('.btn').addEventListener('click', fetchdatabase2()) // to fetch in inner html
+
+
+
+
+    </script>
+</body>
+
+</html>
