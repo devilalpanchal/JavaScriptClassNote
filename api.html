@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // api --- application programming interfage
+        // insure with application interecat
+        // fetch is normal but we can say fetch api it is intrect wtih website
+        // in fetch defaout method is get method
+
+
+        // API
+
+        // get
+        // post
+        // update
+        // delete
+
+
+        // end point of the urll is the key of url and diffent api is difffernt api
+        // let url1 = 'https://dummyjson.com/products/search?q=Samsung' //to search of the url and we can use dyanamic serach functionn here
+
+        let url = 'https://dummyjson.com/products'
+
+        fetch(url, {
+            method: 'GET'
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                let product = data.products
+                console.log(product)
+            })
+
+
+            
+        let url1 = 'https://dummyjson.com/products'
+        fetch(url1, {
+            method: 'POST',
+        headers: {
+                'contentp-Type': 'application/json'
+            },
+            body : JSON.stringify()
+        })
+
+        // .then((response) => response.json())
+        // .then((data) => {
+        //     let product = data.products
+        //     console.log(product)
+        // })
+    </script>
+
+</body>
+
+</html>
