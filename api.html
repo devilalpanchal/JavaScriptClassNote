@@ -8,7 +8,9 @@
 </head>
 
 <body>
+<div class="main">
 
+</div>
     <script>
 
         // api --- application programming interfage
@@ -36,12 +38,13 @@
             .then((response) => response.json())
             .then((data) => {
                 let product = data.products
+                document.querySelector('.main').innerHTML = data.id
                 console.log(product)
             })
 
 
-            
-        let url1 = 'https://dummyjson.com/products'
+
+        let url1 = 'https://dummyjson.com/products/add'
         fetch(url1, {
             method: 'POST',
         headers: {
