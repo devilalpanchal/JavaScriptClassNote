@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>weather api</title>
+  </head>
+  <body>
+    <section>
+      <form action="">
+        <div class="inputContaiener">
+          <label for="">City</label>
+          <input
+            type="text"
+            name="city"
+            id=" city"
+            placeholder="write your city name"
+          />
+        </div>
+        <button id="btn">Submit</button>
+      </form>
+      <div class="cardContainer"></div>
+    </section>
+
+    <!-- to add functionality -->
+    <script>
+      async function fetchData() {
+        let url =
+          "https://api.openweathermap.org/data/2.5/weather?q=Ratlam&appid=796699b11504cd211f9b9a1e0af297a6";
+        let responce = await fetch(url);
+        let data = await responce.json();
+        console.log(data);
+      }
+      fetchData();
+    </script>
+  </body>
+</html>
