@@ -29,11 +29,12 @@
       }
 
       #input {
+        width: 50%;
         border-radius: 0.5rem;
-        background: transparent;
+        background: wheat;
         padding: 1rem;
-
-        border: transparent;
+        outline: none;
+        border: none;
       }
 
       .btn {
@@ -75,20 +76,33 @@
         color: white;
       }
 
-      .loading{
-  border: 16px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 16px solid #3498db;
-  width: 120px;
-  height: 120px;
-  -webkit-animation: spin 2s linear infinite; 
-  animation: spin 2s linear infinite;
-}
+      .loading {
+        border: 100px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 100px solid #020202;
+        width: 500px;
+        height: 500px;
+        -webkit-animation: spin 2s linear infinite;
+        animation: spin 2s linear infinite;
+      }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
+      @-webkit-keyframes spin {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
     </style>
   </head>
   <body>
@@ -106,15 +120,12 @@
       document.querySelector(".btn").addEventListener("click", () => {
         let value = input.value;
         let gitApi = `https://api.github.com/users/${value}`;
-        // console.log(value)
+        console.log(value)
         fetchData(gitApi);
       });
       async function fetchData(url) {
-        document.querySelector(
-          ".card-container"
-        ).innerHTML = `
+        document.querySelector(".card-container").innerHTML = `
         <h1 class='loading'></h1>
-        <h1 >loading.........</h1>
         `;
 
         let response = await fetch(url);
