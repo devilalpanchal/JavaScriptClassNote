@@ -10,9 +10,9 @@ body{
     background-clip: border-box;
 }
 .mainContainer{
-    border: 1px solid blue;
-    height: 95vh;
-    margin: 20px;
+    border: 5px solid blue;
+    height: 97vh;
+    margin: 10px;
 }
 .Weathersection{
     display: flex;
@@ -54,7 +54,6 @@ form{
     color: white;
 }
 .card-container{
-    border: 2px solid red;
     width: 70%;
     height: 83vh;
     margin: 20px;
@@ -97,7 +96,7 @@ form{
     margin-top: 40px;
 }
 .loading {
-    margin-left: 400px;
+    margin-left: 300px;
     margin-top: 200px;
     border: 16px solid #f3f3f3;
     border-radius: 50%;
@@ -124,4 +123,13 @@ form{
     100% {
       transform: rotate(360deg);
     }
+  }
+
+
+  .codername{
+position: absolute;
+bottom: 30px;
+left: 120px;
+font-weight: bolder;
+color: white;
   }

@@ -38,7 +38,11 @@ async function fetchData(url) {
       <i class="fa-solid fa-cloud fa-flip-horizontal fa-xs oneClode" style="color: #f4fafa;"></i>
       <i class="fa-solid fa-cloud fa-flip-horizontal fa-2xs oneClode" style="color: #f4fafa;"></i>
       </div>
-`;
+
+
+    
+      
+      `;
     // ).innerHTML = `<h1>${JSON.stringify(data)}</h1>`
   } catch {
     // reject logic
